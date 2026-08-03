@@ -1,7 +1,7 @@
 
 # ATLAS
 
-**ATLAS NEVER GUESSES. ATLAS REASONS.**
+>**ATLAS NEVER GUESSES. ATLAS REASONS.**
 
 ATLAS is a Blockchain Intelligence Engine designed to analyze on-chain data, evaluate market risk, and support high-confidence decision making through real blockchain intelligence.
 

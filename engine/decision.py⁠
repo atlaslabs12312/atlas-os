@@ -1,0 +1,13 @@
+def make_decision(analysis_result):
+    # ATLAS NEVER GUESSES. ATLAS REASONS.
+    gas = analysis_result.get("gas_price_gwei", 0)
+    
+    if gas > 50:
+        verdict = "FLAGGED: High Gas / Potential MEV Bot Activity"
+    else:
+        verdict = "APPROVED: Standard Organic Transaction"
+        
+    return {
+        "verdict": verdict,
+        "explanation": f"Evaluated based on gas price of {gas} Gwei."
+    }
