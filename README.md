@@ -29,3 +29,12 @@ Build the next generation Blockchain Intelligence Engine that evolves into an Au
 Founder: AtlasLabs
 
 Project Status: Under Active Development
+## ⚡ Quick Start
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run the application
+streamlit run app.py
+```

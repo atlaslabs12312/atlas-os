@@ -1,14 +1,21 @@
+import sys
+import os
+
+# Memastikan modul internal 'engine' terbaca sempurna tanpa error path
+ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
+
 from engine.loader import load_blockchain_data
-from engine.reasoner import reason_with_claude
+from engine.reasoner import reason_with_data
 
 def run_atlas_engine():
     print("=== ATLAS BLOCKCHAIN INTELLIGENCE ENGINE ===")
     
     # 1. Ingest/Load Data Transaksi
-    tx_data = load_blockchain_data("0x9f8c...3b1a")
+    tx_data = load_blockchain_data()
     
-    # 2. Proses Analisis & Reasoning AI dengan parameter yang sesuai
-    analysis_result = reason_with_claude(tx_data, context_volume="150 ETH", context_gas="0.0045")
+    # 2. Proses Analisis & Reasoning
+    analysis_result = reason_with_data(tx_data)
     
     print("\n--- FINAL INTELLIGENCE REPORT ---")
     print(analysis_result)
