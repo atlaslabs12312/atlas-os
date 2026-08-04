@@ -1,4 +1,4 @@
-def make_decision(analysis_result):
+def evaluate(analysis_result):
     # ATLAS NEVER GUESSES. ATLAS REASONS.
     gas = analysis_result.get("gas_price_gwei", 0)
     
