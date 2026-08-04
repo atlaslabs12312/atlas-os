@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from engine.loader import load_contract
+from engine.loader import load_blockchain_data
 from engine.reasoner import analyze_contract
 from engine.decision import evaluate_risk
 
