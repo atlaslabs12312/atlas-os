@@ -70,5 +70,5 @@ def run_atlas_demo():
     time.sleep(0.3)
 
     # 4. DECISION
-    decision = "FLAG_RISK: Tahan eksekusi, anomali tervalidasi oleh AI Reasonin
+    decision = "FLAG_RISK: Tahan eksekusi, anomali tervalidasi oleh AI Reasonin"
     print
