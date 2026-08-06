@@ -138,8 +138,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # State Controller Pengisian Alamat Kontrak Instan via Presets
-if "contract_input" not in st.session_state:
-    st.session_state.contract_input = ""
+if 'contract_input' not in st.session_state:
+    st.session_state.contract_input = ''
 
 def set_demo_address(address):
     st.session_state.contract_input = address
@@ -150,7 +150,7 @@ def set_demo_address(address):
 st.markdown("<h2 style='margin-bottom:0px; font-weight:900; letter-spacing:-0.75px; background: linear-gradient(to right, #F8FAFC, #94A3B8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>🛰️ ATLAS Blockchain Intelligence Engine</h2>", unsafe_allow_html=True)
 st.markdown("<p style='font-size:1.1rem; color:#94A3B8; margin-top:3px; margin-bottom:22px; font-weight:500;'>Explainable AI for Smart Contract Risk Analysis</p>", unsafe_allow_html=True)
 
-col_main_left, col_main_right = st.columns([2.2, 0.8], gap="medium")
+col_main_left, col_main_right = st.columns([2.2, 0.8], gap='medium')
 
 with col_main_right:
     st.markdown("""
@@ -169,14 +169,14 @@ with col_main_right:
 with col_main_left:
     st.markdown("<p style='font-weight:700; color:#94A3B8; font-size:0.8rem; margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;'>QUICK DEMO TEMPLATES:</p>", unsafe_allow_html=True)
     
-    if st.button("🚨 Honeypot Demo (High Gas / Flag Risk)", use_container_width=True):
-        set_demo_address("0x71C27911F5E80F93F5E80F93F5E80F93F5E80H01")
-    if st.button("⚠️ Suspicious Token (Unverified Trace)", use_container_width=True):
-        set_demo_address("0x3F5E80F93F5E80F93F5E80F93F5E80F93F5E80S02")
-    if st.button("✅ Safe Token (Standard Organic)", use_container_width=True):
-        set_demo_address("0x93F5E80F93F5E80F93F5E80F93F5E80F93F5E80M03")
+    if st.button('🚨 Honeypot Demo (High Gas / Flag Risk)', use_container_width=True):
+        set_demo_address('0x71C27911F5E80F93F5E80F93F5E80F93F5E80H01')
+    if st.button('⚠️ Suspicious Token (Unverified Trace)', use_container_width=True):
+        set_demo_address('0x3F5E80F93F5E80F93F5E80F93F5E80F93F5E80S02')
+    if st.button('✅ Safe Token (Standard Organic)', use_container_width=True):
+        set_demo_address('0x93F5E80F93F5E80F93F5E80F93F5E80F93F5E80M03')
 
-    st.write("") 
+    st.write('') 
 
     contract_address = st.text_input(
         "Alamat Kontrak / Token Address",
@@ -210,26 +210,26 @@ if analyze_clicked and contract_address:
 
         raw_string_verdict = analyze_contract()
 
-        is_threat = any(x in raw_string_verdict.upper() for x in ["RISK", "THREAT", "HONEYPOT", "HOLD", "TAHAN", "BAHAYA"])
+        is_threat = any(x in raw_string_verdict.upper() for x in ['RISK', 'THREAT', 'HONEYPOT', 'HOLD', 'TAHAN', 'BAHAYA'])
         
         if is_threat:
-            decision_title = "HIGH RISK"
-            decision_subtitle = "EXECUTION BLOCKED • DO NOT BUY"
-            card_class = "hero-danger"
-            brand_color = "#EF4444"
+            decision_title = 'HIGH RISK'
+            decision_subtitle = 'EXECUTION BLOCKED • DO NOT BUY'
+            card_class = 'hero-danger'
+            brand_color = '#EF4444'
             
             summary_points = [
-                "• Kode berbahaya terdeteksi memiliki karakteristik kuat struktur **Honeypot**.",
-                "• Mekanisme batas proteksi pajak transfer (**Sell Tax**) tidak wajar atau terkunci.",
-                "• Hak kepemilikan deployer (**Ownership**) belum dilepas (*Not Renounced*).",
-                "• Peluang manipulasi penarikan dana sepihak oleh pengembang (**Rug Pull**) sangat kritis."
+                '• Kode berbahaya terdeteksi memiliki karakteristik kuat struktur Honeypot.',
+                '• Mekanisme batas proteksi pajak transfer (Sell Tax) tidak wajar atau terkunci.',
+                '• Hak kepemilikan deployer (Ownership) belum dilepas (Not Renounced).',
+                '• Peluang manipulasi penarikan dana sepihak oleh pengembang (Rug Pull) sangat kritis.'
             ]
             liqi_val, owner_val, tax_val, black_val = 85, 95, 100, 70
         else:
-            decision_title = "LOW RISK"
-            decision_subtitle = "SAFE TO TRADE • APPROVED"
-            card_class = "hero-success"
-            brand_color = "#10B981"
+            decision_title = 'LOW RISK'
+            decision_subtitle = 'SAFE TO TRADE • APPROVED'
+            card_class = 'hero-success'
+            brand_color = '#10B981'
             
             summary_points = [
-                "• Struktur fungsi dinilai organik, bersih dari indikasi jebakan Honeypot.",
+                '• Struktur fungsi dinilai organik, bersih dari indikasi jebakan Honeypot.',
